@@ -1,0 +1,12 @@
+using sysbus
+mach create
+machine LoadPlatformDescription @stm32f103.mod.repl
+: machine LoadPlatformDescription @platforms/cpus/stm32f0.repl
+: machine LoadPlatformDescriptionFromString "button: Miscellaneous.Button @ gpioPortC 13 { IRQ -> gpioPortC@13 }"
+showAnalyzer usart1
+sysbus LoadELF @main.elf
+sysbus LoadSymbolsFrom @main.elf
+: cpu LogFunctionNames true
+: sysbus LogAllPeripheralsAccess true
+: sysbus.cpu PerformanceInMips 125
+: cpu AddHook 0x08000308 "print 'Serial_SendByte'"
