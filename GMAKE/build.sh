@@ -21,7 +21,7 @@ echo "deb [ allow-insecure=yes ]  https://download.mono-project.com/repo/debian 
 apt-get -qq -y update || true
 apt-get -qq -y install mono-complete || true
 wget -q https://github.com/renode/renode/releases/download/v1.15.3/renode_1.15.3_amd64.deb
-apt-get -qq -y ./renode_1.15.3_amd64.deb || true
+apt-get -qq -y install ./renode_1.15.3_amd64.deb || true
 
 pushd stm32-keil-makefile/GMAKE
 timeout 180 renode --disable-gui --console -e "s @stm32f103.mod.resc" || true
