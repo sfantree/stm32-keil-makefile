@@ -11,13 +11,14 @@ int main(void)
     LED_Init();
     Serial_Init();
     while (1)
-	{
-		LED3_Turn();
+    {
+        //LED3_Turn();
         Serial_SendByte('5');
+        Serial_SendByte('\n');
         //printf("123\n");
         //Delay_ms(600);
         Delay_ms(50);
-	}
+    }
 }
 #endif
 

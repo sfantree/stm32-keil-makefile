@@ -14,10 +14,14 @@ stm32项目修改自江协科技的串口uart1示例
 6. 下载安装mingw64(make)
 7. 修改build.bat中mingw64和arm gcc环境变量
 
+Linux下测试环境：
+参考build.sh安装gcc-arm-none-eabi, mono和renode
+renode --disable-gui --console -e "s @stm32f103.mod.resc"
+
 使用make编译时arm gcc交叉编译器下载地址
 https://launchpad.net/gcc-arm-embedded/4.6/4.6-2012-q4-update
 
-文件功能说明
+文件功能说明：
 startup_stm32f10x_md.s 
 从CMSIS目录下复制，注意区分MDK(CMSIS_RVMDK)和ARM(EWARM)的汇编格式
 
@@ -40,3 +44,7 @@ renode的stm32f103脚本语法
 stm32f103.mod.repl
 renode的stm32f103 soc外设资源硬件地址描述
 RCC部分取自renode/stm32f0
+
+CI说明：
+
+测试 github.com/renode/renode
