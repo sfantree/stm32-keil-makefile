@@ -69,7 +69,7 @@ SRC_C=
 SRC_ASM=
 # # SRC_ASM := startup_stm32f10x_md.s
 KEILMK_DIR=..
-include $(KEILMK_DIR)/keil.mk  
+include $(KEILMK_DIR)/Project.mk
 
 OBJS    := $(filter %.o, $(SRC_ASM:.s=.o)) $(filter %.o, $(SRC_C:.c=.o))
 
