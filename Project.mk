@@ -8,8 +8,10 @@ INCLUDE_DIRS+=$(KEILMK_DIR)/./Hardware
 DIR_INCLUDE = $(patsubst %, -I%, $(INCLUDE_DIRS))
 #INCLUDE END
 #SOURCE BEGIN
+# 修改keil和gcc不兼容的文件
 SRC_ASM+=startup_stm32f10x_md.s
-SRC_C+=$(KEILMK_DIR)/./Start/core_cm3.c
+# 修改keil和gcc不兼容的文件
+SRC_C+=core_cm3.c
 SRC_C+=$(KEILMK_DIR)/./Start/system_stm32f10x.c
 SRC_C+=$(KEILMK_DIR)/./Library/misc.c
 SRC_C+=$(KEILMK_DIR)/./Library/stm32f10x_adc.c

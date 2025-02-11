@@ -1,74 +1,12 @@
 PROJECT := main
 
-# DIR_DRIVERS   += ../Drivers/Driver_Clock/
-# DIR_DRIVERS   += ../Drivers/Driver_Delay/
-# DIR_DRIVERS   += ../Drivers/Driver_EEPROM/
-# DIR_DRIVERS   += ../Drivers/Driver_Flash/
-# DIR_DRIVERS   += ../Drivers/Driver_IIC/
-# DIR_DRIVERS   += ../Drivers/Driver_IO/
-# DIR_DRIVERS   += ../Drivers/Driver_NVIC/
-# DIR_DRIVERS   += ../Drivers/Driver_SPI/
-# DIR_DRIVERS   += ../Drivers/Driver_Timer/
-# DIR_DRIVERS   += ../Drivers/Driver_USART/
-
-# DIR_MODULES   += ../Modules/Module_Battery/
-# DIR_MODULES   += ../Modules/Module_CommLink/
-# DIR_MODULES   += ../Modules/Module_LED/
-# DIR_MODULES   += ../Modules/Module_Motor/
-# DIR_MODULES   += ../Modules/Module_MPU6050/
-# DIR_MODULES   += ../Modules/Module_MS5611/
-# DIR_MODULES   += ../Modules/Module_NRF24L01/
-
-# DIR_ALGORITHM += ../Algorithm/Algorithm_Altitude/
-# DIR_ALGORITHM += ../Algorithm/Algorithm_Control/
-# DIR_ALGORITHM += ../Algorithm/Algorithm_Filter/
-# DIR_ALGORITHM += ../Algorithm/Algorithm_Flight/
-# DIR_ALGORITHM += ../Algorithm/Algorithm_IMU/
-
-# DIR_INCLUDE   += -I../Libraries/CMSIS/ \
-                 # -I../Libraries/FWLib/inc/ \
-                 # $(addprefix -I, $(DIR_DRIVERS)) \
-                 # $(addprefix -I, $(DIR_MODULES)) \
-                 # $(addprefix -I, $(DIR_ALGORITHM)) \
-                 # -I../User/ \
-
-# # INCLUDE_DIRS += ../Start
-# # INCLUDE_DIRS += ../Library
-# # INCLUDE_DIRS += ../User
-# # INCLUDE_DIRS += ../Hardware
-# # INCLUDE_DIRS += ../System
-
-# # DIR_INCLUDE = $(patsubst %, -I%, $(INCLUDE_DIRS))
-
-# SRC_C   += $(wildcard ../Libraries/CMSIS/*.c)
-# SRC_C   += $(wildcard ../Libraries/FWLib/src/*.c)
-# SRC_C   += $(wildcard $(addsuffix *.c, $(DIR_DRIVERS)))
-# SRC_C   += $(wildcard $(addsuffix *.c, $(DIR_MODULES)))
-# SRC_C   += $(wildcard $(addsuffix *.c, $(DIR_ALGORITHM)))
-# SRC_C   += $(wildcard ../User/*.c)
-
-# # SRC_C         += ../User/main.c
-# # SRC_C         += ../User/stm32f10x_it.c
-
-# # SRC_C         += ../System/Delay.c
-
-# # SRC_C         += ../Hardware/Key.c
-# # SRC_C         += ../Hardware/LED.c
-# # SRC_C         += ../Hardware/OLED.c
-# # SRC_C         += ../Hardware/Serial.c
-# CMSIS
-# # SRC_C  += ../Start/system_stm32f10x.c
-# # SRC_C  += ../Start/core_cm3.c
-# use libraries, please add or remove when you use or remove it.
-# # SRC_C  += ../Library/stm32f10x_rcc.c
-# # SRC_C  += ../Library/stm32f10x_gpio.c
-# # SRC_C  += ../Library/stm32f10x_exti.c
-# # SRC_C  += ../Library/stm32f10x_usart.c
-# # SRC_C  += ../Library/misc.c
 SRC_C=
 SRC_ASM=
-# # SRC_ASM := startup_stm32f10x_md.s
+
+# 修改相对路径
 KEILMK_DIR=..
+
+# 修改正确的 Project.mk
 include $(KEILMK_DIR)/Project.mk
 
 OBJS    := $(filter %.o, $(SRC_ASM:.s=.o)) $(filter %.o, $(SRC_C:.c=.o))
